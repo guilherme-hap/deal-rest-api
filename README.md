@@ -14,6 +14,8 @@ classDiagram
         +int projects
         +int articles
         +Program[] programs
+        +News[] news
+        +Recommendation[] recommendations
     }
 
     class Program {
@@ -33,14 +35,7 @@ classDiagram
         +String technology
     }
 
-    class Root {
-        +User user
-        +News news
-        +Recommendation[] recommendations
-    }
-
-    Root "1" --> "1" User
-    Root "1" --> "1" News
-    Root "1" --> "*" Recommendation
-    User "0" --> "*" Program
+    User "1" --> "*" Program
+    User "1" --> "*" News
+    User "1" --> "*" Recommendation
 ``` 
